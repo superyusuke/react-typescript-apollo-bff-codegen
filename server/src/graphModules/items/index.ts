@@ -1,6 +1,5 @@
 import { gql } from "apollo-server-express";
 import { Resolvers } from "src/types/generated/graphql";
-import delay from "delay";
 
 export const typeDefs = gql`
   extend type Query {
@@ -16,6 +15,7 @@ export const typeDefs = gql`
     addItem(name: String!): Item!
   }
 `;
+
 export const resolvers: Resolvers = {
   Query: {
     items: async (_parent, _args, { token, db }) => {
