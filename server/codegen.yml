@@ -1,0 +1,21 @@
+overwrite: true
+generates:
+  ./src/types/generated/graphql.ts:
+    schema: ./src/graphModules/*/index.ts
+    config:
+      useIndexSignature: true
+      contextType: ../context#Context
+      scalars:
+        Upload: ../scalars#Upload
+    plugins:
+      - typescript
+      - typescript-resolvers
+  ./graphql.schema.json:
+    schema: ./src/graphModules/*/index.ts
+    config:
+      useIndexSignature: true
+      contextType: ../context#Context
+      scalars:
+        Upload: ../scalars#Upload
+    plugins:
+      - introspection

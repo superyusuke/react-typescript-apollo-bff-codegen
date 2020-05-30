@@ -1,0 +1,4 @@
+/node_modules
+/dist/
+/graphql.schema.json
+/src/types/generated

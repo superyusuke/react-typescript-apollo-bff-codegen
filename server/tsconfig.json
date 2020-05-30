@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "sourceMap": true,
+    "module": "commonjs",
+    "target": "es2018",
+    "typeRoots": ["types", "node_modules/@types"],
+    "lib": ["es2015"],
+    "skipLibCheck": true,
+    "baseUrl": "./",
+    "paths": {
+      "src/*": ["src/*"]
+    },
+    "esModuleInterop": true
+  }
+}
