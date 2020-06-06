@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node build/index.js",
-    "build:api=dev": "API_DOMAIN_MODE=dev webpack",
-    "build:api=prod": "API_DOMAIN_MODE=prod webpack",
+    "build": "API_DOMAIN_MODE=dev webpack",
     "start-server:dev": "NODE_ENV=development API_DOMAIN_MODE=dev webpack",
     "run:dev": "NODE_ENV=development nodemon build/index.js",
     "test": "NODE_ENV=test jest --forceExit",

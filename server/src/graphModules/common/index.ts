@@ -1,7 +1,7 @@
 import { gql } from "apollo-server-express";
 import { Resolvers } from "src/types/generated/graphql";
 import delay from "delay";
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "src/generated/prismaClient";
 
 const prisma = new PrismaClient();
 
