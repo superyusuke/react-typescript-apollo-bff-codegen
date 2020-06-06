@@ -3,7 +3,7 @@ import { jsx } from "@emotion/core";
 import gql from "graphql-tag";
 import {
   useHealthCheckMessageQuery,
-  usePrismaDbQuery,
+  usePgQuery,
 } from "src/types/generated/graphql";
 import { useState } from "react";
 
@@ -16,8 +16,8 @@ gql`
 
 // eslint-disable-next-line no-unused-expressions
 gql`
-  query prismaDB {
-    prismaDB
+  query pg {
+    pg
   }
 `;
 
@@ -30,14 +30,14 @@ export const Test = () => {
     },
   });
 
-  const { data: prismaData } = usePrismaDbQuery({
-    onCompleted({ prismaDB }) {
+  const { data: pgData } = usePgQuery({
+    onCompleted({ pg }) {
       console.log("hey");
-      console.log(prismaDB, "prismaDB");
+      console.log(pg, "prismaDB");
     },
   });
 
-  console.log(prismaData?.prismaDB, "db");
+  console.log(pgData?.pg, "pg");
 
   if (!data) {
     return <div>ローディング</div>;
