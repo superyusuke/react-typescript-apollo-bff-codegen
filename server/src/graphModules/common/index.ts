@@ -34,7 +34,7 @@ export const resolvers: Resolvers = {
         return allUsers[0].username;
       } catch (e) {
         console.log(e.message);
-        throw new Error("");
+        throw new Error(e);
       }
     },
   },
