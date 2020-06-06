@@ -3,7 +3,11 @@ import { jsx } from "@emotion/core";
 import gql from "graphql-tag";
 import { useItemsQuery } from "src/types/generated/graphql";
 import { Items } from "src/pages/Test2/Items";
-import { ItemsQuery, useAddItemMutation } from "src/types/generated/graphql";
+import {
+  ItemsQuery,
+  useAddItemMutation,
+  useDeleteItemMutation,
+} from "src/types/generated/graphql";
 
 // eslint-disable-next-line no-unused-expressions
 gql`
@@ -26,7 +30,7 @@ gql`
 `;
 
 export const Test2 = () => {
-  const { data, refetch, networkStatus } = useItemsQuery();
+  const { data, loading, error, refetch, networkStatus } = useItemsQuery();
 
   const [mutation] = useAddItemMutation();
 
@@ -44,7 +48,7 @@ export const Test2 = () => {
       <button type="button" onClick={clickHandler}>
         新しいものを追加する
       </button>
-      <Items list={data.items} />
+      <Items list={data.items} refetch={refetch} />
     </div>
   );
 };

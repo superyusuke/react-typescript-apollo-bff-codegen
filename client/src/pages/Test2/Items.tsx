@@ -5,15 +5,16 @@ import { Item } from "src/pages/Test2/Item";
 
 type Props = {
   list: ItemsQuery["items"];
+  refetch: any;
 };
 
 export const Items = (props: Props) => {
-  const { list } = props;
+  const { list, refetch } = props;
 
   return (
     <div>
       {list.map((o) => (
-        <Item item={o} key={o.id} />
+        <Item item={o} key={o.id} refetch={refetch} />
       ))}
     </div>
   );

@@ -1,0 +1,15 @@
+runtime: nodejs10
+instance_class: F1
+
+handlers:
+    - url: /graphql
+      script: auto
+
+    - url: /(.*\.(gif|media|json|ico|eot|ttf|woff|woff2|png|jpg|css|js))$
+      static_files: distClient/\1
+      upload: distClient/(.*)
+
+    - url: /(.*)
+      static_files: distClient/sub/index.html
+      upload: distClient/sub/index.html
+
