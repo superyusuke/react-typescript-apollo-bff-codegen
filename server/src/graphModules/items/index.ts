@@ -5,7 +5,7 @@ import delay from "delay";
 export const typeDefs = gql`
   extend type Query {
     """
-    データベースから item 一覧を取得しまう
+    データベースから item 一覧を取得します
     """
     items: [Item!]!
   }
