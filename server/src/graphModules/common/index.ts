@@ -9,8 +9,6 @@ export const typeDefs = gql`
   type Query {
     _dummy: Boolean
     healthCheckMessage: String!
-    pg: String!
-    #    prismaDB: String
   }
   type Mutation {
     _dummy: Boolean
