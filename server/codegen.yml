@@ -1,15 +1,29 @@
 overwrite: true
 generates:
+  # GraphQL の Resolver に必要な型をつける
+  # Resolver は実際に値を DB から取得したり API を使用する部分
   ./src/types/generated/graphql.ts:
+    # Schema の場所を指定
     schema: ./src/graphModules/*/index.ts
     config:
       useIndexSignature: true
+      # context:
+      # Apollo Server を立てるときに外から注入した DB や、
+      # Apollo Sever への request に含まれる header 情報等のこと
+      # context は resolver から参照できる
       contextType: ../context#Context
+      # scalars: Apollo Server がデフォルトで持っている以外の
+      # 基本的な型を定義することができる
       scalars:
+        # 主に画像アップロード時に必要になる型
         Upload: ../scalars#Upload
+    # codegen は plugin　を用いて適切な code を生成する
     plugins:
-      - typescript
-      - typescript-resolvers
+      - typescript # typescript に出力するために必要
+      - typescript-resolvers # graphQL の Resolver のための型にするために必要
+
+  # これはなくても多分いい
+  # IDE で補完させるために自分は作っている / サーバーサイドではいらないかも
   ./graphql.schema.json:
     schema: ./src/graphModules/*/index.ts
     config:
