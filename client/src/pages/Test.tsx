@@ -14,7 +14,8 @@ gql`
   }
 `;
 
-// eslint-disable-next-line no-unused-expressions
+// eslint-disable-next-lin）
+// e no-unused-expressions
 gql`
   query pg {
     pg
@@ -29,15 +30,6 @@ export const Test = () => {
       setInputValue(healthCheckMessage);
     },
   });
-
-  const { data: pgData } = usePgQuery({
-    onCompleted({ pg }) {
-      console.log("hey");
-      console.log(pg, "prismaDB");
-    },
-  });
-
-  console.log(pgData?.pg, "pg");
 
   if (!data) {
     return <div>ローディング</div>;
