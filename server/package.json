@@ -9,10 +9,7 @@
     "start-server:dev": "NODE_ENV=development API_DOMAIN_MODE=dev webpack",
     "run:dev": "NODE_ENV=development nodemon build/index.js",
     "test": "NODE_ENV=test jest --forceExit",
-    "codegen-server:watch": "gql-gen --watch",
-    "prisma-demo": "nodemon",
-    "prisma:introspect": "npx prisma introspect",
-    "prisma:generate": "npx prisma generate"
+    "codegen-server:watch": "gql-gen --watch"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.14.0",

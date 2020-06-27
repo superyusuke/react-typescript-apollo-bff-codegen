@@ -87,7 +87,7 @@ const config = {
   "generator": {
     "name": "client",
     "provider": "prisma-client-js",
-    "output": "/Users/nakanishiyuusuke/WebstormProjects/makemoney-ts-apollo/server/src/generated/prismaClient",
+    "output": "/Users/nakanishiyuusuke/WebstormProjects/react-typescript-apollo-bff-codegen/server/src/generated/prismaClient",
     "binaryTargets": [
       "native",
       "darwin",
@@ -103,8 +103,8 @@ const config = {
       "name": "db",
       "connectorType": "postgresql",
       "url": {
-        "fromEnvVar": "DATABASE_URL",
-        "value": "postgresql://postgres:test@localhost/postgres?host=/cloudsql/elegant-hope-273402:asia-northeast1:my-pgdb"
+        "fromEnvVar": null,
+        "value": "postgresql://"
       }
     }
   ],
