@@ -9,8 +9,8 @@
     "start-server:dev": "NODE_ENV=development API_DOMAIN_MODE=dev webpack",
     "run:dev": "NODE_ENV=development nodemon build/index.js",
     "test": "NODE_ENV=test jest --forceExit",
-    "codegen-server": "gql-gen",
-    "codegen-server:watch": "gql-gen --watch"
+    "codegen-server": "graphql-codegen --config codegen-introspect.yml",
+    "codegen-server:watch": "graphql-codegen --watch"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.14.0",

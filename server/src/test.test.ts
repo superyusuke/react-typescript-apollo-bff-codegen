@@ -13,6 +13,7 @@ describe("tst", () => {
       query getItems {
         items {
           name
+          id
         }
       }
     `;
@@ -23,7 +24,9 @@ describe("tst", () => {
       if (errors) {
         errors.map((o) => o.message);
       }
-      console.log(data?.items, "items");
+      if (data) {
+        console.log(data.items.map((o) => o.id));
+      }
     } catch (e) {}
   });
 });

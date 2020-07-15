@@ -22,15 +22,15 @@ generates:
       - typescript # typescript に出力するために必要
       - typescript-resolvers # graphQL の Resolver のための型にするために必要
   ./src/types/generated/request.ts:
+    schema: ./src/graphModules/*/index.ts
     documents: src/**/*.ts
-    schema: http://localhost:8080/graphql
     plugins:
       - typescript
       - typescript-operations
       - typescript-graphql-request
     config:
       rawRequest: true
-  ./graphql.schema.json:
-    schema: http://localhost:8080/graphql
-    plugins:
-      - introspection
+#  ./graphql.schema.json:
+#    schema: http://localhost:8080/graphql
+#    plugins:
+#      - introspection
