@@ -21,15 +21,16 @@ generates:
     plugins:
       - typescript # typescript に出力するために必要
       - typescript-resolvers # graphQL の Resolver のための型にするために必要
-
-  # これはなくても多分いい
-  # IDE で補完させるために自分は作っている / サーバーサイドではいらないかも
-  ./graphql.schema.json:
-    schema: ./src/graphModules/*/index.ts
+  ./src/types/generated/request.ts:
+    documents: src/**/*.ts
+    schema: http://localhost:8080/graphql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-graphql-request
     config:
-      useIndexSignature: true
-      contextType: ../context#Context
-      scalars:
-        Upload: ../scalars#Upload
+      rawRequest: true
+  ./graphql.schema.json:
+    schema: http://localhost:8080/graphql
     plugins:
       - introspection

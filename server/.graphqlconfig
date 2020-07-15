@@ -1,4 +1,4 @@
 {
-  "name": "Server Schema",
-  "schemaPath": "graphql.schema.json"
+  "name": "Untitled GraphQL Schema",
+  "schemaPath": "schema.graphql"
 }
